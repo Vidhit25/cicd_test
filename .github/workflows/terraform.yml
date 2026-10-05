@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: hashicorp/setup-terraform@v4
       - run: terraform init -backend-config="key=dev.tfstate" #create a dev env statefile
-      - run: terraform apply -auto-approve -var-file=envs/dev.tfvar
+      - run: terraform apply -auto-approve -var-file=envs/dev.tfvars
       - run: terraform destroy -auto-approve -var-file=envs/dev.tfvars #destroy the dev env after apply
 
 
